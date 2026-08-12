@@ -31,10 +31,12 @@
 ### 3.1. 构建并运行（Docker）
 
 ```bash
-docker build -t minecraft-casual:1.21.1-temp . && \
+docker build -t minecraft-casual:1.21.1-temp ./1.21.1 && \
     docker run --rm -it \
         -p 25565:25565/tcp \
         -p 25575:25575/tcp \
+        -v ./world:/app/world \
+        -v ./simple_backup:/app/simple_backup \
         minecraft-casual:1.21.1-temp
 ```
 
