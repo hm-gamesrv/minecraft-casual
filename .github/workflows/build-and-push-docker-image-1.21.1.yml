@@ -54,6 +54,7 @@ jobs:
                   # 调整上下文目录
                   context: ./1.21.1
                   push: true
+                  provenance: false
                   # 同时打上 latest 和 日期 tag
                   tags: |
                       ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:1.21.1-${{ steps.prep.outputs.date }}
