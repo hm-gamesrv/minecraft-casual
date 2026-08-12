@@ -1,11 +1,12 @@
-name: Build and Push Docker Image (1.21.1)
+name: Build and Push Docker Image
+
 on:
     push:
         branches:
             - main
         paths:
-            - "1.21.1/**"
-            - ".github/workflows/build-and-push-docker-image-1.21.1.yml"
+            - "*/**"
+            - ".github/workflows/build-and-push-docker-image.yml"
     workflow_dispatch:
 
 jobs:
@@ -16,6 +17,12 @@ jobs:
             contents: read
             packages: write
 
+        strategy:
+            fail-fast: false
+            matrix:
+                version:
+                    - 1.21.1
+
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
@@ -23,7 +30,6 @@ jobs:
             - name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v3
 
-            # 登录到 GHCR
             - name: Log in to GitHub Container Registry (GHCR)
               uses: docker/login-action@v3
               with:
@@ -31,7 +37,6 @@ jobs:
                   username: ${{ github.actor }}
                   password: ${{ secrets.GITHUB_TOKEN }}
 
-            # 登录到阿里云 ACR
             - name: Log in to ACR
               uses: docker/login-action@v3
               with:
@@ -39,7 +44,6 @@ jobs:
                   username: ${{ secrets.ALIYUN_REGISTRY_USER }}
                   password: ${{ secrets.ALIYUN_REGISTRY_PASSWORD }}
 
-            # 获取当前日期 (yyyy-MM-dd) 并强制用户名小写
             - name: Prepare Image Tags
               id: prep
               run: |
@@ -51,15 +55,13 @@ jobs:
             - name: Build and push
               uses: docker/build-push-action@v6
               with:
-                  # 调整上下文目录
-                  context: ./1.21.1
+                  context: ./${{ matrix.version }}
                   push: true
                   provenance: false
-                  # 同时打上 latest 和 日期 tag
                   tags: |
-                      ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:1.21.1-${{ steps.prep.outputs.date }}
-                      ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:1.21.1-latest
-                      ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/minecraft-casual:1.21.1-${{ steps.prep.outputs.date }}
-                      ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/minecraft-casual:1.21.1-latest
-                  cache-from: type=gha
-                  cache-to: type=gha,mode=max
+                      ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:${{ matrix.version }}-latest
+                      ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:${{ matrix.version }}-${{ steps.prep.outputs.date }}
+                      ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/minecraft-casual:${{ matrix.version }}-latest
+                      ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/minecraft-casual:${{ matrix.version }}-${{ steps.prep.outputs.date }}
+                  cache-from: type=gha,scope=${{ matrix.version }}
+                  cache-to: type=gha,mode=max,scope=${{ matrix.version }}
