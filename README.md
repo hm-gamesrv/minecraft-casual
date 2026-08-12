@@ -1,4 +1,4 @@
-# minecraft-casual
+# Minecraft Casual Server
 
 ## 1. 简述
 
@@ -10,9 +10,25 @@
 | ------- | --------------- |
 | 1.21.1  | `1.21.1-latest` |
 
-## 2. 构建与运行
+## 2. 资源占用信息
 
-### 2.1. 构建并运行（Docker）
+### 2.1. 端口
+
+| 端口号 | 协议 | 说明         |
+| ------ | ---- | ------------ |
+| 25565  | TCP  | 游戏联机端口 |
+| 25575  | TCP  | RCON 端口    |
+
+### 2.2. 持久卷
+
+| 容器路径             | 说明                       |
+| -------------------- | -------------------------- |
+| `/app/world`         | 游戏世界存档               |
+| `/app/simple_backup` | simple_backup 模组备份路径 |
+
+## 3. 构建与运行
+
+### 3.1. 构建并运行（Docker）
 
 ```bash
 docker build -t minecraft-casual:1.21.1-temp . && \
@@ -22,7 +38,7 @@ docker build -t minecraft-casual:1.21.1-temp . && \
         minecraft-casual:1.21.1-temp
 ```
 
-### 2.2. 运行服务器（Podman）
+### 3.2. 运行服务器（Podman）
 
 ```bash
 IMAGE=ghcr.io/hm-gamesrv/minecraft-casual:1.21.1-latest
