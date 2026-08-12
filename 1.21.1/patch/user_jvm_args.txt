@@ -8,4 +8,8 @@
 # Uncomment the next line to set it.
 -Xms6G
 -Xmx6G
+
+# Use ZGC (generational by default on JDK 21+)
+-XX:+UseZGC
+
 -javaagent:authlib-injector-1.2.8.jar=https://mcskin.dsrv.top/api/yggdrasil

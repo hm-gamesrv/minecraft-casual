@@ -1,7 +1,7 @@
 # =================
 # 资源下载
 # =================
-FROM eclipse-temurin:25-jre-alpine AS builder
+FROM eclipse-temurin:25-jre AS builder
 
 RUN apt update && apt install -y --no-install-recommends \
         wget && \
@@ -15,7 +15,7 @@ RUN java -jar neoforge-21.1.248-installer.jar --fat-offline && \
 # ===================
 # 基座镜像
 # ===================
-FROM eclipse-temurin:25-jre-alpine
+FROM eclipse-temurin:25-jre
 
 EXPOSE 25565/tcp 25575/tcp
 
