@@ -44,7 +44,23 @@
             "key": "1.21.1",
             "name": "1.21.1",
             "tag": "1.21.1-latest",
-            "container": "minecraft-casual-1.21.1-server"
+            "container": "minecraft-casual-1.21.1-server",
+            "resources": {
+                "volumes": [
+                    {
+                        "host": "./minecraft-casual-1.21.1-world",
+                        "container": "/app/world",
+                        "required": true,
+                        "desc": "游戏世界存档"
+                    },
+                    {
+                        "host": "./minecraft-casual-1.21.1-simple_backup",
+                        "container": "/app/simple_backup",
+                        "required": true,
+                        "desc": "simple_backup 模组备份路径"
+                    }
+                ]
+            }
         }
     ]
 }
