@@ -1,0 +1,50 @@
+{
+    "schemaVersion": 1,
+    "key": "minecraft-casual",
+    "name": "Minecraft Casual",
+    "registries": {
+        "ghcr": "ghcr.io/hm-gamesrv/",
+        "aliyun": "crpi-i9e7zrpnu4792a5m.cn-chengdu.personal.cr.aliyuncs.com/hiromuraki/"
+    },
+    "resources": {
+        "ports": [
+            {
+                "host": "25565",
+                "container": "25565",
+                "proto": "tcp",
+                "required": true,
+                "desc": "游戏联机端口"
+            },
+            {
+                "host": "25575",
+                "container": "25575",
+                "proto": "tcp",
+                "desc": "RCON 端口"
+            }
+        ],
+        "volumes": [
+            {
+                "host": "./world",
+                "container": "/app/world",
+                "required": true,
+                "desc": "游戏世界存档"
+            },
+            {
+                "host": "./simple_backup",
+                "container": "/app/simple_backup",
+                "required": true,
+                "desc": "simple_backup 模组备份路径"
+            }
+        ],
+        "env": [],
+        "extraArgs": ""
+    },
+    "variants": [
+        {
+            "key": "1.21.1",
+            "name": "1.21.1",
+            "tag": "1.21.1-latest",
+            "container": "minecraft-casual-1.21.1-server"
+        }
+    ]
+}
