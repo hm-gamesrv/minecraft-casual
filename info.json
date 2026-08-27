@@ -28,12 +28,6 @@
                 "container": "/app/world",
                 "required": true,
                 "desc": "游戏世界存档"
-            },
-            {
-                "host": "./simple_backup",
-                "container": "/app/simple_backup",
-                "required": true,
-                "desc": "simple_backup 模组备份路径"
             }
         ],
         "env": [],
@@ -41,9 +35,15 @@
     },
     "variants": [
         {
+            "key": "26.2",
+            "name": "26.2",
+            "tag": "26.2",
+            "container": "minecraft-casual-26.2-server"
+        },
+        {
             "key": "1.21.1",
             "name": "1.21.1",
-            "tag": "1.21.1-latest",
+            "tag": "1.21.1",
             "container": "minecraft-casual-1.21.1-server",
             "resources": {
                 "volumes": [

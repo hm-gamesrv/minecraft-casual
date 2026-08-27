@@ -60,9 +60,9 @@ jobs:
                   push: true
                   provenance: false
                   tags: |
-                      ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:${{ matrix.version }}-latest
                       ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:${{ matrix.version }}-${{ steps.prep.outputs.date }}
-                      ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/minecraft-casual:${{ matrix.version }}-latest
+                      ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:${{ matrix.version }}
                       ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/minecraft-casual:${{ matrix.version }}-${{ steps.prep.outputs.date }}
+                      ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/minecraft-casual:${{ matrix.version }}
                   cache-from: type=gha,scope=${{ matrix.version }}
                   cache-to: type=gha,mode=max,scope=${{ matrix.version }}
