@@ -6,9 +6,10 @@
 
 **支持游戏版本：**
 
-| MC 版本 | 镜像 tag        |
-| ------- | --------------- |
-| 1.21.1  | `1.21.1-latest` |
+| MC 版本 | 镜像 tag |
+| ------- | -------- |
+| 1.21.1  | `1.21.1` |
+| 26.2    | `26.2`   |
 
 ## 2. 资源占用信息
 
@@ -31,13 +32,12 @@
 ### 3.1. 构建并运行（Docker）
 
 ```bash
-docker build -t minecraft-casual:1.21.1-temp ./1.21.1 && \
+docker build -t minecraft-casual:temp . && \
     docker run --rm -it \
         -p 25565:25565/tcp \
-        -p 25575:25575/tcp \
+        -p 25575:25575/tcp \podm
         -v ./world:/app/world \
-        -v ./simple_backup:/app/simple_backup \
-        minecraft-casual:1.21.1-temp
+        minecraft-casual:temp
 ```
 
 ### 3.2. 运行服务器（Podman）

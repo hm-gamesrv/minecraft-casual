@@ -5,7 +5,7 @@ FROM eclipse-temurin:25-jre AS builder
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        wget \
+    wget \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /downloads
