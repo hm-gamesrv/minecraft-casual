@@ -31,11 +31,6 @@ COPY --chown=1000:1000 ["./patch/", "/app"]
 FROM eclipse-temurin:25-jre-alpine AS runtime
 
 ENV TZ=Asia/Shanghai
-ENV JAVA_MEMORY=4G
-ENV GAME_MAX_PLAYERS=8
-ENV GAME_ONLINE_MODE=true
-ENV GAME_AUTHLIB_INJECTOR_URL="https://mcskin.dsrv.top/api/yggdrasil"
-ENV GAME_MANAGEMENT_SERVER_SECRET=""
 
 RUN mkdir -p /app /app/world && chown 1000:1000 /app /app/world
 
