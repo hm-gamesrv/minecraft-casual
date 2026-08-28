@@ -8,7 +8,7 @@ RUN apk add --no-cache \
 
 RUN mkdir -p /download \
     && wget -qO /download/fabric-server.jar \
-    https://meta.fabricmc.net/v2/versions/loader/26.2/0.19.4/1.1.2/server/jar
+    https://meta.fabricmc.net/v2/versions/loader/26.2/0.19.5/1.1.2/server/jar
 
 # =================
 # 安装

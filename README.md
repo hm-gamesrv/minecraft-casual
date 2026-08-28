@@ -22,10 +22,10 @@
 
 ### 2.2. 持久卷
 
-| 容器路径             | 说明                       |
-| -------------------- | -------------------------- |
-| `/app/world`         | 游戏世界存档               |
-| `/app/simple_backup` | simple_backup 模组备份路径 |
+| 容器路径             | 说明                       | tag             |
+| -------------------- | -------------------------- | --------------- |
+| `/app/world`         | 游戏世界存档               | `26.2`,`1.21.1` |
+| `/app/simple_backup` | simple_backup 模组备份路径 | `1.21.1`        |
 
 ## 3. 构建与运行
 
@@ -35,7 +35,7 @@
 docker build -t minecraft-casual:temp . && \
     docker run --rm -it \
         -p 25565:25565/tcp \
-        -p 25575:25575/tcp \podm
+        -p 25575:25575/tcp \
         -v ./world:/app/world \
         minecraft-casual:temp
 ```
