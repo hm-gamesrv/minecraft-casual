@@ -71,6 +71,27 @@
             "tag": "26.2",
             "container": "minecraft-casual-server",
             "resources": {
+                "ports": [
+                    {
+                        "host": "25565",
+                        "container": "25565",
+                        "proto": "tcp",
+                        "required": true,
+                        "desc": "游戏联机端口"
+                    },
+                    {
+                        "host": "25575",
+                        "container": "25575",
+                        "proto": "tcp",
+                        "desc": "RCON 端口"
+                    },
+                    {
+                        "host": "24454",
+                        "container": "24454",
+                        "proto": "udp",
+                        "desc": "模组“简单的语音聊天”所用端口"
+                    }
+                ],
                 "volumes": [
                     {
                         "host": "./minecraft-casual-world",
