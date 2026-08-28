@@ -24,13 +24,44 @@
         ],
         "volumes": [
             {
-                "host": "./world",
+                "host": "./minecraft-casual-world",
                 "container": "/app/world",
                 "required": true,
                 "desc": "游戏世界存档"
             }
         ],
-        "env": [],
+        "env": [
+            {
+                "name": "JAVA_MEMORY",
+                "value": "4G",
+                "secret": false,
+                "desc": "JVM 堆内存大小（同时作用于 -Xms/-Xmx），如 4G、2500M"
+            },
+            {
+                "name": "GAME_MAX_PLAYERS",
+                "value": "8",
+                "secret": false,
+                "desc": "服务器列表显示的玩家容量，达到上限后新玩家无法加入"
+            },
+            {
+                "name": "GAME_ONLINE_MODE",
+                "value": "true",
+                "secret": false,
+                "desc": "是否启用在线验证模式：true=开启，false=关闭"
+            },
+            {
+                "name": "GAME_AUTHLIB_INJECTOR_URL",
+                "value": "https://mcskin.dsrv.top/api/yggdrasil",
+                "secret": false,
+                "desc": "外置登录（authlib-injector）Yggdrasil API 地址，置空则跳过外置登录"
+            },
+            {
+                "name": "GAME_MANAGEMENT_SERVER_SECRET",
+                "value": "",
+                "secret": true,
+                "desc": "Minecraft 管理服务器（management server）鉴权令牌"
+            }
+        ],
         "extraArgs": ""
     },
     "variants": [
@@ -38,11 +69,11 @@
             "key": "26.2",
             "name": "26.2",
             "tag": "26.2",
-            "container": "minecraft-casual-26.2-server",
+            "container": "minecraft-casual-server",
             "resources": {
                 "volumes": [
                     {
-                        "host": "./minecraft-casual-26.2-world",
+                        "host": "./minecraft-casual-world",
                         "container": "/app/world",
                         "required": true,
                         "desc": "游戏世界存档"
@@ -69,7 +100,8 @@
                         "required": true,
                         "desc": "simple_backup 模组备份路径"
                     }
-                ]
+                ],
+                "env": []
             }
         }
     ]
