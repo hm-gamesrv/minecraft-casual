@@ -5,7 +5,8 @@ on:
         branches:
             - main
         paths:
-            - "*/**"
+            - "1.21.1/**"
+            - "26.2/**"
             - ".github/workflows/build-and-push-docker-image.yml"
     workflow_dispatch:
 

@@ -38,7 +38,17 @@
             "key": "26.2",
             "name": "26.2",
             "tag": "26.2",
-            "container": "minecraft-casual-26.2-server"
+            "container": "minecraft-casual-26.2-server",
+            "resources": {
+                "volumes": [
+                    {
+                        "host": "./minecraft-casual-26.2-world",
+                        "container": "/app/world",
+                        "required": true,
+                        "desc": "游戏世界存档"
+                    }
+                ]
+            }
         },
         {
             "key": "1.21.1",
