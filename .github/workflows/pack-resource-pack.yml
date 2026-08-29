@@ -1,4 +1,4 @@
-name: Build Resource Pack
+name: Pack Resource Pack
 
 on:
     push:
