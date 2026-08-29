@@ -1,0 +1,52 @@
+name: Build Resource Pack
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - "26.2/resource-pack/**"
+    workflow_dispatch:
+
+permissions:
+    contents: write
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v7
+
+            - name: Validate pack.mcmeta
+              run: python3 -c "import json; json.load(open('26.2/resource-pack/pack.mcmeta')); print('pack.mcmeta OK')"
+
+            - name: Package resource pack
+              id: pack
+              run: |
+                  mkdir -p dist
+                  cd 26.2/resource-pack
+                  zip -r -X -q ../../dist/resource-pack-26.2.zip pack.mcmeta assets
+                  cd ../..
+                  echo "sha1=$(sha1sum dist/resource-pack-26.2.zip | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+                  echo "url=https://github.com/${{ github.repository }}/releases/download/resource-pack-26.2/resource-pack-26.2.zip" >> "$GITHUB_OUTPUT"
+
+            - name: Verify zip layout
+              run: unzip -l dist/resource-pack-26.2.zip | grep -q 'pack.mcmeta' && echo 'root pack.mcmeta OK'
+
+            - name: Publish to GitHub Release (stable URL)
+              uses: softprops/action-gh-release@v3
+              with:
+                  tag_name: resource-pack-26.2
+                  name: "Resource Pack 26.2"
+                  body: |
+                      Auto-built from `26.2/resource-pack/`
+                      - URL:  ${{ steps.pack.outputs.url }}
+                      - SHA1: `${{ steps.pack.outputs.sha1 }}`
+                  files: dist/resource-pack-26.2.zip
+                  fail_on_unmatched_files: false
+
+            - name: Summary
+              run: |
+                  echo "URL:  ${{ steps.pack.outputs.url }}"
+                  echo "SHA1: ${{ steps.pack.outputs.sha1 }}"

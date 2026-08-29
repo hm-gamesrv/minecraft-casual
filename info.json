@@ -2,6 +2,7 @@
     "schemaVersion": 1,
     "key": "minecraft-casual",
     "name": "Minecraft Casual",
+    "desc": "我的世界原版风格的轻量休闲服务器",
     "registries": {
         "ghcr": "ghcr.io/hm-gamesrv/",
         "aliyun": "crpi-i9e7zrpnu4792a5m.cn-chengdu.personal.cr.aliyuncs.com/hiromuraki/"
@@ -20,6 +21,12 @@
                 "container": "25575",
                 "proto": "tcp",
                 "desc": "RCON 端口"
+            },
+            {
+                "host": "24454",
+                "container": "24454",
+                "proto": "udp",
+                "desc": "模组“简单的语音聊天”所用端口"
             }
         ],
         "volumes": [
@@ -69,7 +76,13 @@
             "key": "26.2",
             "name": "26.2",
             "tag": "26.2",
-            "container": "minecraft-casual-server",
+            "container": "minecraft-casual-server"
+        },
+        {
+            "key": "1.21.1",
+            "name": "1.21.1",
+            "tag": "1.21.1",
+            "container": "minecraft-casual-1.21.1-server",
             "resources": {
                 "ports": [
                     {
@@ -84,30 +97,8 @@
                         "container": "25575",
                         "proto": "tcp",
                         "desc": "RCON 端口"
-                    },
-                    {
-                        "host": "24454",
-                        "container": "24454",
-                        "proto": "udp",
-                        "desc": "模组“简单的语音聊天”所用端口"
                     }
                 ],
-                "volumes": [
-                    {
-                        "host": "./minecraft-casual-world",
-                        "container": "/app/world",
-                        "required": true,
-                        "desc": "游戏世界存档"
-                    }
-                ]
-            }
-        },
-        {
-            "key": "1.21.1",
-            "name": "1.21.1",
-            "tag": "1.21.1",
-            "container": "minecraft-casual-1.21.1-server",
-            "resources": {
                 "volumes": [
                     {
                         "host": "./minecraft-casual-1.21.1-world",
