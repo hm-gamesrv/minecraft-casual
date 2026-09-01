@@ -39,10 +39,16 @@
         ],
         "env": [
             {
-                "name": "JAVA_MEMORY",
+                "name": "JVM_MEMORY",
                 "value": "4G",
                 "secret": false,
                 "desc": "JVM 堆内存大小（同时作用于 -Xms/-Xmx），如 4G、2500M"
+            },
+            {
+                "name": "JVM_AUTHLIB_INJECTOR_URL",
+                "value": "https://mcskin.dsrv.top/api/yggdrasil",
+                "secret": false,
+                "desc": "外置登录（authlib-injector）Yggdrasil API 地址，置空则跳过外置登录"
             },
             {
                 "name": "GAME_MAX_PLAYERS",
@@ -55,12 +61,6 @@
                 "value": "true",
                 "secret": false,
                 "desc": "是否启用在线验证模式：true=开启，false=关闭"
-            },
-            {
-                "name": "GAME_AUTHLIB_INJECTOR_URL",
-                "value": "https://mcskin.dsrv.top/api/yggdrasil",
-                "secret": false,
-                "desc": "外置登录（authlib-injector）Yggdrasil API 地址，置空则跳过外置登录"
             },
             {
                 "name": "GAME_RESOURCE_PACK",

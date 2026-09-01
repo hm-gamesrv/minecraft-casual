@@ -35,6 +35,7 @@ ENV TZ=Asia/Shanghai
 RUN mkdir -p /app /app/world && chown 1000:1000 /app /app/world
 
 COPY --from=install --chown=1000:1000 ["/app","/app"]
+COPY --chown=1000:1000 ["./init.sh", "/usr/local/bin/init.sh"]
 
 EXPOSE 25565/tcp 25575/tcp 24454/udp
 
@@ -42,4 +43,5 @@ VOLUME [ "/app/world" ]
 
 WORKDIR /app
 USER 1000:1000
+ENTRYPOINT [ "sh", "/usr/local/bin/init.sh" ]
 CMD ["sh", "/app/start-server.sh"]
