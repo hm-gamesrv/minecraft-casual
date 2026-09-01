@@ -1,5 +1,5 @@
 -Xms{{ JAVA_MEMORY }}
--Xms{{ JAVA_MEMORY }}
+-Xmx{{ JAVA_MEMORY }}
 
 -XX:+UseZGC
 -XX:+UseCompactObjectHeaders
