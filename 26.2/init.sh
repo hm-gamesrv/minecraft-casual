@@ -1,6 +1,7 @@
 #!/bin/sh
 set -eu
 
+# 用于设置 server.properties 中的特定属性值
 set_game_property() {
     key=$1
     value=$2
@@ -10,6 +11,7 @@ set_game_property() {
     fi
 }
 
+# 用于设定 user_jvm_args.txt 中的特定属性值
 set_jvm_property() {
     key=$1
     value=$2
@@ -21,20 +23,13 @@ set_jvm_property() {
     fi
 }
 
-JVM_MEMORY=${JVM_MEMORY:-4G}
-JVM_AUTHLIB_INJECTOR_URL=${JVM_AUTHLIB_INJECTOR_URL:-https://mcskin.dsrv.top/api/yggdrasil}
+set_jvm_property JVM_MEMORY "${JVM_MEMORY:-6G}"
+set_jvm_property JVM_AUTHLIB_INJECTOR_URL "${JVM_AUTHLIB_INJECTOR_URL:-}"
 
-GAME_MAX_PLAYERS=${GAME_MAX_PLAYERS:-8}
-GAME_ONLINE_MODE=${GAME_ONLINE_MODE:-true}
-GAME_MANAGEMENT_SERVER_SECRET=${GAME_MANAGEMENT_SERVER_SECRET:-}
-GAME_RESOURCE_PACK=${GAME_RESOURCE_PACK:-}
-
-set_game_property max-players "$GAME_MAX_PLAYERS"
-set_game_property online-mode "$GAME_ONLINE_MODE"
-set_game_property management-server-secret "$GAME_MANAGEMENT_SERVER_SECRET"
-set_game_property resource-pack "$GAME_RESOURCE_PACK"
-
-set_jvm_property JAVA_MEMORY "$JVM_MEMORY"
-set_jvm_property JAVA_AUTHLIB_INJECTOR_URL "$JVM_AUTHLIB_INJECTOR_URL"
+set_game_property max-players "${GAME_MAX_PLAYERS:-8}"
+set_game_property online-mode "${GAME_ONLINE_MODE:-true}"
+set_game_property resource-pack "${GAME_RESOURCE_PACK:-}"
+set_game_property enable-rcon "${GAME_ENABLE_RCON:-false}"
+set_game_property rcon.password "${GAME_RCON_PASSWORD:-}"
 
 exec "$@"

@@ -40,39 +40,39 @@
         "env": [
             {
                 "name": "JVM_MEMORY",
-                "value": "4G",
-                "secret": false,
+                "value": "6G",
                 "desc": "JVM 堆内存大小（同时作用于 -Xms/-Xmx），如 4G、2500M"
             },
             {
                 "name": "JVM_AUTHLIB_INJECTOR_URL",
-                "value": "https://mcskin.dsrv.top/api/yggdrasil",
-                "secret": false,
+                "value": "",
                 "desc": "外置登录（authlib-injector）Yggdrasil API 地址，置空则跳过外置登录"
             },
             {
                 "name": "GAME_MAX_PLAYERS",
                 "value": "8",
-                "secret": false,
                 "desc": "服务器列表显示的玩家容量，达到上限后新玩家无法加入"
             },
             {
                 "name": "GAME_ONLINE_MODE",
                 "value": "true",
-                "secret": false,
                 "desc": "是否启用在线验证模式：true=开启，false=关闭"
             },
             {
                 "name": "GAME_RESOURCE_PACK",
                 "value": "",
-                "secret": false,
-                "desc": "Minecraft 服务器资源包 URL"
+                "desc": "强制启用的服务端资源包 URL"
             },
             {
-                "name": "GAME_MANAGEMENT_SERVER_SECRET",
+                "name": "GAME_ENABLE_RCON",
+                "value": "false",
+                "desc": "是否启用 RCON"
+            },
+            {
+                "name": "GAME_RCON_PASSWORD",
                 "value": "",
                 "secret": true,
-                "desc": "Minecraft 管理服务器（management server）鉴权令牌"
+                "desc": "RCON 口令"
             }
         ],
         "extraArgs": ""

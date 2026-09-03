@@ -11,7 +11,3 @@
 
 <!--START:VARIANT_SECTIONS-->
 <!--END:VARIANT_SECTIONS-->
-
-<!--START:MAINTENANCE-->
-（每个版本的「首次启动与维护」子标题都会包含这段内容，按需修改）
-<!--END:MAINTENANCE-->

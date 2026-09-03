@@ -1,9 +1,9 @@
--Xms{{ JAVA_MEMORY }}
--Xmx{{ JAVA_MEMORY }}
+-Xms{{ JVM_MEMORY }}
+-Xmx{{ JVM_MEMORY }}
 
 -XX:+UseZGC
 -XX:+UseCompactObjectHeaders
 -XX:+AlwaysPreTouch
 -XX:+UseStringDeduplication
 
--javaagent:authlib-injector-1.2.8.jar={{ JAVA_AUTHLIB_INJECTOR_URL }}
+-javaagent:authlib-injector-1.2.8.jar={{ JVM_AUTHLIB_INJECTOR_URL }}
