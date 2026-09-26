@@ -10,9 +10,9 @@ RUN apt-get update \
 
 WORKDIR /downloads
 
-RUN wget -q https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.248/neoforge-21.1.248-installer.jar \
-    && java -jar neoforge-21.1.248-installer.jar --fat-offline \
-    && java -jar neoforge-21.1.248-installer-fat.jar --install-server ./app
+RUN wget -q https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.251/neoforge-21.1.251-installer.jar \
+    && java -jar neoforge-21.1.251-installer.jar --fat-offline \
+    && java -jar neoforge-21.1.251-installer-fat.jar --install-server ./app
 
 # ===================
 # 主镜像
