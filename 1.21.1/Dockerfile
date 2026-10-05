@@ -3,6 +3,8 @@
 # =================
 FROM eclipse-temurin:25-jre AS builder
 
+ARG NEOFORGE_VERSION=21.1.255
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     wget \
@@ -10,9 +12,9 @@ RUN apt-get update \
 
 WORKDIR /downloads
 
-RUN wget -q https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.251/neoforge-21.1.251-installer.jar \
-    && java -jar neoforge-21.1.251-installer.jar --fat-offline \
-    && java -jar neoforge-21.1.251-installer-fat.jar --install-server ./app
+RUN wget -q https://maven.neoforged.net/releases/net/neoforged/neoforge/${NEOFORGE_VERSION}/neoforge-${NEOFORGE_VERSION}-installer.jar \
+    && java -jar neoforge-${NEOFORGE_VERSION}-installer.jar --fat-offline \
+    && java -jar neoforge-${NEOFORGE_VERSION}-installer-fat.jar --install-server ./app
 
 # ===================
 # 主镜像
