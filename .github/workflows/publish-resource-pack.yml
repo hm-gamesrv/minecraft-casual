@@ -1,4 +1,4 @@
-name: Pack Resource Pack
+name: Publish Resource Pack
 
 on:
     push:
