@@ -5,6 +5,7 @@ on:
         branches:
             - main
         paths:
+            - ".github/publish-resource-pack.yml"
             - "26.3/resource-pack/**"
     workflow_dispatch:
 
