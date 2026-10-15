@@ -79,9 +79,9 @@
     },
     "variants": [
         {
-            "key": "26.2",
-            "name": "26.2",
-            "tag": "26.2",
+            "key": "26.3",
+            "name": "26.3",
+            "tag": "26.3",
             "container": "minecraft-casual-server"
         },
         {
