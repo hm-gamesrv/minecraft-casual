@@ -1,0 +1,11 @@
+# AI
+.agents
+.codex
+.claude
+
+# temp
+.scratch
+
+# 26.3 模组在构建时从 Modrinth 下载（清单见 26.3/mods.json）
+26.3/patch/mods/*.jar
+!26.3/patch/mods/xp-growth-*.jar

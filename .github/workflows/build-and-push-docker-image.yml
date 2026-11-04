@@ -1,0 +1,69 @@
+name: Build and Push Docker Image
+
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - "1.21.1/**"
+            - "26.3/**"
+            - ".github/workflows/build-and-push-docker-image.yml"
+    workflow_dispatch:
+
+jobs:
+    build-and-push:
+        runs-on: ubuntu-latest
+
+        permissions:
+            contents: read
+            packages: write
+
+        strategy:
+            fail-fast: false
+            matrix:
+                version:
+                    - 26.3
+                    - 1.21.1
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v7
+
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v4
+
+            - name: Log in to GitHub Container Registry (GHCR)
+              uses: docker/login-action@v4
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Log in to ACR
+              uses: docker/login-action@v4
+              with:
+                  registry: ${{ secrets.ALIYUN_REGISTRY }}
+                  username: ${{ secrets.ALIYUN_REGISTRY_USER }}
+                  password: ${{ secrets.ALIYUN_REGISTRY_PASSWORD }}
+
+            - name: Prepare Image Tags
+              id: prep
+              run: |
+                  OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+                  DATE=$(date +'%Y-%m-%d')
+                  echo "owner=$OWNER" >> $GITHUB_OUTPUT
+                  echo "date=$DATE" >> $GITHUB_OUTPUT
+
+            - name: Build and push
+              uses: docker/build-push-action@v7
+              with:
+                  context: ./${{ matrix.version }}
+                  push: true
+                  provenance: false
+                  tags: |
+                      ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:${{ matrix.version }}-${{ steps.prep.outputs.date }}
+                      ghcr.io/${{ steps.prep.outputs.owner }}/minecraft-casual:${{ matrix.version }}
+                      ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/minecraft-casual:${{ matrix.version }}-${{ steps.prep.outputs.date }}
+                      ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_REGISTRY_NAMESPACE }}/minecraft-casual:${{ matrix.version }}
+                  cache-from: type=gha,scope=${{ matrix.version }}
+                  cache-to: type=gha,mode=max,scope=${{ matrix.version }}

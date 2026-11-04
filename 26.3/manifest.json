@@ -1,0 +1,166 @@
+{
+    "minecraft": "26.3",
+    "fabric": {
+        "loader": "0.20.1",
+        "installer": "1.1.2",
+        "sha512": "60ac0afaed8070d923dcef0547c820e19f4c25ba3512c33b29757efeef923a2a64b96e627a2c817773bd9136996647f788924bc2658e31075670bd05a43636f8"
+    },
+    "mods": [
+        {
+            "project_id": "R4TvILfj",
+            "version_id": "QW8CXyRC",
+            "sha512": "433ab18583df971cb976c466e46abc0ffafd4e31a7378136fb551dff0ca021892722624fca3275ae2f4667acf9245b5c997e566036d4aa5602fbe2668aa17ae4",
+            "filename": "additionaladditions-fabric-10.0.15.jar"
+        },
+        {
+            "project_id": "EsAfCjCV",
+            "version_id": "PHjDtQay",
+            "sha512": "17d257af419b7530aa8617c2e8c0e4bbfabcf888f26655790e0188e7957e0bcd931f85f9a4c69fd27e889dee5082cf7b2b8741a14a6ed4425e9ef4bfe13a8b8c",
+            "filename": "appleskin-fabric-mc26.3-3.0.10.jar"
+        },
+        {
+            "project_id": "MBAkmtvl",
+            "version_id": "MYj31XNG",
+            "sha512": "aaf07f5b94f7015c87df7b242f3f45f0729fb3f72d887745ad5c5ceb31eb071e425254009158774101676d6480f31c832dd60860d79da5b661cc10b84241c319",
+            "filename": "balm-fabric-26.3-26.3.0.3.jar"
+        },
+        {
+            "project_id": "tPLE214j",
+            "version_id": "nGUdicIW",
+            "sha512": "dc61c6579feec503dc5940fc085843606a125d82e1b5144bab48002c5541f901d0ebc3a3c0e9d29086f76a3f3b50fc0cb9b8eed414d41349f1f841ec3f6ddbbb",
+            "filename": "betterdays-26.3-fabric-4.1.1.7-FABRIC.jar"
+        },
+        {
+            "project_id": "cl223EMc",
+            "version_id": "rWxmPrGC",
+            "sha512": "96198dfc067ce7003cad9b211286e58e36efcaa29729af3c09c643d3e8bd8a54e5814eb8d88680a38caf9e6328a541151b6c6b1bd9ac117d9c7278d93d6de88c",
+            "filename": "cristellib-fabric-26.3-3.1.13.jar"
+        },
+        {
+            "project_id": "uCdwusMi",
+            "version_id": "TGgEbP9A",
+            "sha512": "0b90b1b08d99974bfc3c8e86b2ceb252e2f91715ed66b925004c28335fb44e1bddbbb6b8043e4d4d53c87ed247789cd1788b1ba4e3f4394efe154e0c59cff236",
+            "filename": "DistantHorizons-3.3.4-26.3-fabric-neoforge.jar"
+        },
+        {
+            "project_id": "tpehi7ww",
+            "version_id": "A97537Vz",
+            "sha512": "dbbb723f9574f14f526c85aa80a370ad046bbd100eb73c83ae8e6cb71b3180b51b6f5e0041793e0772b6ba47ecaa60ff46725a3b73d16a9ffba30115d29052e7",
+            "filename": "dungeons-and-taverns-6.1.0.jar"
+        },
+        {
+            "project_id": "P7dR8mSH",
+            "version_id": "nJlcvFfj",
+            "sha512": "21ce87863ed73c4c871e072f13c5a7b00bd148a098c5064a5f381479d1ddd7c54b0f40ef7d17ce2ae5712deb647c5fcaf12cb72fb663fe8d958188e870b33de0",
+            "filename": "fabric-api-0.165.2+26.3.jar"
+        },
+        {
+            "project_id": "yn9u3ypm",
+            "version_id": "r9hY06vQ",
+            "sha512": "0a1e8bf88d66f0ba5cfdf3d7544b73d373f283c0b75ddb627fb8841825e58af7925f6eb3e8aa437f3739771396e4b32207192500062761bcdac7efcc3ff5cc03",
+            "filename": "graves-3.13.0+26.3.jar"
+        },
+        {
+            "project_id": "nvQzSEkH",
+            "version_id": "71CTWqdE",
+            "sha512": "2e7331e62eb6658268ae92dc42de8b469f50dd6c6a9d2546a6f649bae97c2cdfd8d4c1560948cf46269175d2c79c6c47a36a02685e39d476768d18fbb2a28703",
+            "filename": "Jade-mc26.3-Fabric-26.3.5.jar"
+        },
+        {
+            "project_id": "gvQqBUqZ",
+            "version_id": "fWv5bnZk",
+            "sha512": "2ca92fb530135d2baddf0ba4cc4f93976234876a38c4aa02b487b2552400f005afcfbeebf5373fb4396fe2020537a42d7597b8da5a52b904355ef51d5fef07ad",
+            "filename": "lithium-fabric-0.26.3+mc26.3.jar"
+        },
+        {
+            "project_id": "XaDC71GB",
+            "version_id": "pZgI6b2t",
+            "sha512": "d7ffe9bb3ea653ae70317f8621c546e3331369c0dd3cd6cadb374cc71283ca1fae1e7de7d2d16eb5724e96f7159c8b043e15a618f32dad88c8e70a7d8d1db4ee",
+            "filename": "lithostitched-2.0.6-fabric-26.3.jar"
+        },
+        {
+            "project_id": "QQXAdCzh",
+            "version_id": "3o7Yk0qP",
+            "sha512": "7195d283a6fda15da5c9c3c09c2a687bb7ecac9fb477989d38e474c7fd8860b72a39d0796442da9b1b9073e2527ed43395d46b2b690086b512a922df726d9e1c",
+            "filename": "Ping-Wheel-1.12.2-fabric-26.3.jar"
+        },
+        {
+            "project_id": "xGdtZczs",
+            "version_id": "pA7tHJZE",
+            "sha512": "1bff541c65337a913cd9adf340edeb9711ea98f8410511e0a1cf71da9470edc1062e4262e0a1d51c8baef34cf1a5646b46924476e1c8abe85b488b2caa000097",
+            "filename": "polymer-bundled-0.18.7+26.3.jar"
+        },
+        {
+            "project_id": "bi4iCmsw",
+            "version_id": "9gkJoFhj",
+            "sha512": "f050b6360b188a82ca7e3fbb0d00eff4c02b9b39bc991fbddcf4a3588f594887d15f6421e50d5a7452a53ec35d44ec9b325d7826f77393af9543fe3383cb142d",
+            "filename": "shogi-fabric-26.3-26.3.0.3.jar"
+        },
+        {
+            "project_id": "l6YH9Als",
+            "version_id": "e3hsPc1o",
+            "sha512": "c74bf5d5a16b2445ec6ea717eac756412b272a8015e91f91a7bf5a27e6f2f99c4a11878d434510f941f37b0344b3a7d1ba0dd6c34e80642762c48fb6e9a93894",
+            "filename": "spark-1.10.187-fabric.jar"
+        },
+        {
+            "project_id": "qwvI41y9",
+            "version_id": "pDwhgAWy",
+            "sha512": "395d4c97190a838eafadb4eef30d5643b45afaa42622f522598a0b83c11a71aa5d2213965fc504ae15718d0ccec09bedd8991814a83a869a241c9c1b0905a4cb",
+            "filename": "sparsestructures-fabric-26.3-3.1.5.jar"
+        },
+        {
+            "project_id": "aKCwCJlY",
+            "version_id": "GjOkOVW4",
+            "sha512": "a9b7c7ce45a38c4be68563337e413adbf486a8e47fecc450d3ee59dadf807faee39d49a098c2dbfc2a466f0d36c71ca8e051f161efdbfc19b069f0c70e6b4223",
+            "filename": "Structory_26.3_v1.3.18+26.3.jar"
+        },
+        {
+            "project_id": "DjLobEOy",
+            "version_id": "vHZIKy6e",
+            "sha512": "bd0469d23a80d1bbbb0a3696b3c1a62f90cc5ad16e4cc58fe9e0e08e7453c3015ff7619b1d429106a034279b46fe909a0962b6dc9e970920f717fc518d9e292d",
+            "filename": "t_and_t-fabric-neoforge-1.13.13.jar"
+        },
+        {
+            "project_id": "lWDHr9jE",
+            "version_id": "tRBGDcCT",
+            "sha512": "bf1e39b3dfaba524d2111572279816df3c60c6e90831c9ae8e6c13f9f5770223a30a6a3986f061f57e7ebe4cdb008cc30cb3a44d7816e2c12ba795a3b4ae79bb",
+            "filename": "tectonic-3.0.32-fabric-26.3.jar"
+        },
+        {
+            "project_id": "8oi3bsk5",
+            "version_id": "aGE3hYAA",
+            "sha512": "918b232df7a855bae89c7fa85affb5ce134e236c4726fa14a5bdaa179eb1e010f040a9fa981f006a0e26e421a2a961bc29a75e99a4500fd18361a8ba81478071",
+            "filename": "Terralith_26.3_v2.6.5+26.3.jar"
+        },
+        {
+            "project_id": "XZNI4Cpy",
+            "version_id": "e7S7Hc7o",
+            "sha512": "b16374830a11fe3b0c9c48b202bb2ef0b56268cf20169eabdb44e6e5ada80c3bf6a61064e40ceb9686c97dc70898d230be17dfc8190cf867083ceaa6be09228e",
+            "filename": "toms_storage_fabric-26.3-2.12.2.jar"
+        },
+        {
+            "project_id": "g0mmcQV2",
+            "version_id": "yfdKZWca",
+            "sha512": "319b21d44b036b1798ab0cd81c78d3eb07c9b53d1818819cc8e019b24dd3ce13477c8d93e6d70a6299c5e6382a9c86ab8db097bc81b9a40926a75c6d5e7acfcb",
+            "filename": "UndeadNights-2.2.6-Fabric-mc26.3.jar"
+        },
+        {
+            "project_id": "qtOzkQyw",
+            "version_id": "BK9NOoGO",
+            "sha512": "0b5a7341ab1d1cac3e05eacf9e3f672644f10c3ea62206671d17f35ee86c2923b9a0b4257c66e7928a14c3c2c6d7197dd405f52c2cc441c1cc80325a0e4af876",
+            "filename": "villages-revamped-V2.11.jar"
+        },
+        {
+            "project_id": "9eGKb6K1",
+            "version_id": "x9jLR94Q",
+            "sha512": "f2de66761c0f249bb0f9a4b348f98b97ab4e89d3ed3fd37638420364b7431b757933aa08c0cc3e7ba3dd85a602d6c2de313c2309fc587e93cabf31fc5f6df27e",
+            "filename": "voicechat-fabric-2.6.27+26.3.jar"
+        },
+        {
+            "project_id": "LOpKHB2A",
+            "version_id": "FHxw949T",
+            "sha512": "2caf3c4e4f2a8f6109378ebede5226f8d601064c2791a36d2aaf5a548195a14fe0abde656121b2d88bfd8ac8d6d87c2cde4a885e1c78edfe684f1cd88f477ba1",
+            "filename": "waystones-fabric-26.3-26.3.0.2.jar"
+        }
+    ]
+}
