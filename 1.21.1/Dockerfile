@@ -3,7 +3,7 @@
 # =================
 FROM eclipse-temurin:25-jre AS builder
 
-ARG NEOFORGE_VERSION=21.1.255
+ARG NEOFORGE_VERSION=21.1.265
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

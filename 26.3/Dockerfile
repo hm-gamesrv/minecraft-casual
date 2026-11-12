@@ -29,6 +29,13 @@ RUN set -eu; \
         echo "$sha512  /download/mods/$filename" | sha512sum -c -; \
     done < /tmp/mods.txt
 
+# 自建模组：从 GitHub Release 下载，并校验 SHA-256
+# 升级时同步修改 URL 中的版本号与校验值
+RUN set -eu; \
+    wget -q --tries=3 --timeout=30 -O /download/mods/xp-growth-26.3.0.1.jar \
+        "https://github.com/hiromuraki/xp-growth/releases/download/v26.3.0.1/xp-growth-26.3.0.1.jar"; \
+    echo "1df58b72c10578e0896cddb54e39be5a12080562a9767ed6ae0de03cd7e049b3  /download/mods/xp-growth-26.3.0.1.jar" | sha256sum -c -
+
 # =================
 # 安装
 # =================

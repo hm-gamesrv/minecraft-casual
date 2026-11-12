@@ -51,7 +51,7 @@ docker build -t minecraft-casual:1.21.1 ./1.21.1
 ```
 
 - **26.3**：按 [`26.3/manifest.json`](26.3/manifest.json) 从 Modrinth 下载模组并校验 SHA-512；
-  Fabric server jar 同样从清单读取版本并校验
+  Fabric server jar 同样从清单读取版本并校验；自建模组 XP Growth 从 GitHub Release 下载并校验 SHA-256
 - **1.21.1**：从 NeoForge Maven 下载安装器，需要访问 `maven.neoforged.net`
 
 ## 5. 运行

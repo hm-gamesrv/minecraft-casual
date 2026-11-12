@@ -1,3 +1,2 @@
-# 模组 jar 在构建时从 Modrinth 下载（清单见 mods.json）
+# 模组 jar 全部在构建时下载（清单见 manifest.json）
 patch/mods/*.jar
-!patch/mods/xp-growth-*.jar

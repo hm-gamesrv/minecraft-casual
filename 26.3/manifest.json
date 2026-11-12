@@ -44,15 +44,15 @@
         },
         {
             "project_id": "tpehi7ww",
-            "version_id": "A97537Vz",
-            "sha512": "dbbb723f9574f14f526c85aa80a370ad046bbd100eb73c83ae8e6cb71b3180b51b6f5e0041793e0772b6ba47ecaa60ff46725a3b73d16a9ffba30115d29052e7",
+            "version_id": "hn5CugpP",
+            "sha512": "b143a1780d8eda2b548307f6cbd22b9e8b7a8b34e7f65de63179c94331ce875d72a2bdc0e01b885cfdeb09c13f215dfb8016d00f4511270ba9dd3c0744fcff9e",
             "filename": "dungeons-and-taverns-6.1.0.jar"
         },
         {
             "project_id": "P7dR8mSH",
-            "version_id": "nJlcvFfj",
-            "sha512": "21ce87863ed73c4c871e072f13c5a7b00bd148a098c5064a5f381479d1ddd7c54b0f40ef7d17ce2ae5712deb647c5fcaf12cb72fb663fe8d958188e870b33de0",
-            "filename": "fabric-api-0.165.2+26.3.jar"
+            "version_id": "Zns5SSRA",
+            "sha512": "fb686a9fa923248328107a12498229d6951e316257f18b7d0e4cbd6885ba447ed50a44076a8a5ba47cfe2043b329db3587ab000aeab1face26b2587a5d4ba6b5",
+            "filename": "fabric-api-0.166.2+26.3.jar"
         },
         {
             "project_id": "yn9u3ypm",
